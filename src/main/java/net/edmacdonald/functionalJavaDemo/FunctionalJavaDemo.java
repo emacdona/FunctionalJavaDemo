@@ -36,6 +36,10 @@ public class FunctionalJavaDemo {
         System.out.println("Numbers divisible by 2 and 3");
         integers.filter(S.divisibleByFilter(2)).filter(S.divisibleByFilter(3)).map(S.<Integer>display());
 
+        System.out.println();
+        System.out.println("Numbers divisible by 2 and 5");
+        integers.filter(S.divisibleByFilter(2)).filter(S.divisibleByFilter(5)).map(S.<Integer>display());
+
     }
 }
 
