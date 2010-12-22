@@ -43,7 +43,7 @@ public class FunctionalJavaDemo {
         System.out.println();
         System.out.println("Sum");
         System.out.println(
-                integers.foldLeft1(S.intAdder())
+                integers.<Integer>foldLeft(S.intAdder(), 0)
         );
     }
 }
