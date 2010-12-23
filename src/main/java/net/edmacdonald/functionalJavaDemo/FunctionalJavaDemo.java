@@ -56,6 +56,7 @@ class S{ /* S for "static" cuz this class has a bunch of static methods */
 
     public static <T> F<T,T> display() {
         return new F<T, T>(){
+            @Override
             public T f(T t) {
                 System.out.println(t);
                 return t; //The signature says we have to return a value. This is the best value to return; it will
@@ -71,6 +72,7 @@ class S{ /* S for "static" cuz this class has a bunch of static methods */
 
     public static F<Integer, Boolean> oddFilter() {
         return new F<Integer, Boolean>(){
+            @Override
             public Boolean f(Integer integer) {
                 return (integer % 2) == 1;
             }
@@ -79,6 +81,7 @@ class S{ /* S for "static" cuz this class has a bunch of static methods */
 
     public static F<Integer, Boolean> evenFilter() {
         return new F<Integer, Boolean>(){
+            @Override
             public Boolean f(Integer integer) {
                 return (integer % 2) == 0;
             }
@@ -87,6 +90,7 @@ class S{ /* S for "static" cuz this class has a bunch of static methods */
 
     public static F<Integer, Boolean> divisibleByFilter(final Integer divisor) {
         return new F<Integer, Boolean>(){
+            @Override
             public Boolean f(Integer integer) {
                 return (integer % divisor) == 0;
             }
@@ -100,8 +104,10 @@ class S{ /* S for "static" cuz this class has a bunch of static methods */
     //Damn, that signature is intimidating! But, once you're forced to implement it, it makes a little more sense.
     public static F<Integer, F<Integer, Integer>> intAdder() {
         return new F<Integer, F<Integer, Integer>>(){
+            @Override
             public F<Integer, Integer> f(final Integer int_a) {
                 return new F<Integer, Integer>(){
+                    @Override
                     public Integer f(Integer int_b) {
                         return int_a + int_b;
                     }
